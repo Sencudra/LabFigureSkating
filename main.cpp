@@ -126,7 +126,7 @@ class Tournament
 int main(int argc, char *argv[])
 {
     ifstream fin;
-    fin.open("C:\\Users\\Vlad\\Desktop\\test2.txt");
+    fin.open("C:\\Users\\test2.txt"); //местоположение файла
 
     Tournament game;
 
@@ -144,8 +144,8 @@ int main(int argc, char *argv[])
 
         for(int i = 0; i < 7; i++){
             float points;
-            fin >> points; // Отключаю считывание для рандома
-            points =0; //(rand() % 60)/10.0;
+            fin >> points; 
+            points = (rand() % 60)/10.0; // Перезаписываю переменную для ранома
             game.recordMark(i,counter,points);
 
             cout << points << " ";
@@ -156,9 +156,6 @@ int main(int argc, char *argv[])
     game.sortJudges();
     game.countPlace();
     game.result();
-
-
-
-
+    
     return 0;
 }
